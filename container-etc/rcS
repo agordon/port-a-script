@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Setup Hostname
+hostname "puku"
+
+# Enable localhost networking
+ifconfig lo up
+
+rm -f /var/run/puku.sock
+umask 002
+httpd -p local:/var/run/puku.sock  -f -v -v -v -h /var/www 2>&1 \
+    | tee /var/log/httpd-$(date +%F-%H%M%S).log

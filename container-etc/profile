@@ -1,0 +1,2 @@
+[ "\$PS1" ] && [ "\$BASH" ] && [ "\$BASH" != "/bin/sh" ] \
+    && [ -f /etc/bash.bashrc ] && . /etc/bash.bashrc
