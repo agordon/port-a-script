@@ -1,0 +1,23 @@
+table.input th {
+    text-align:right;
+    vertical-align:top;
+}
+div.results {
+    padding-left: 1em;
+}
+pre {
+    border-radius: 5px;
+    padding: 1ex;
+    margin-left: 1em;
+    border: 1px solid #c0c0c0;
+    background: #f0f0f0;
+}
+
+textarea.mytextarea {
+    min-width: 100%;
+    font-family: "Courier New", Courier, monospace ;
+}
+
+input.upload {
+    display: inline;
+}
