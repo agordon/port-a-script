@@ -8,6 +8,8 @@ using multiple implementations in a secure environment.
 
 For a demo visit <http://puku.housegordon.org> .
 
+Source: <https://github.com/agordon/port-a-script>
+
 
 Installation
 ------------
