@@ -11,6 +11,9 @@ die()
     exit 1
 }
 
+sudo -p "Enter sudo password to apt-get prequisites: "\
+   apt-get install -y make build-essential bison flex ed libbsd-dev \
+   || die "failed to install required packages for sas-implementations"
 
 if ! test -d "sas-implementations" ; then
     git clone https://github.com/agordon/sas-implementations \
