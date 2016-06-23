@@ -27,6 +27,50 @@ var examples = {
         "stdin": ""
     },
 
+    "sh-dbg-perm" : {
+        "language" : "sh",
+        "script" :
+            "# Ensure only /tmp is writable\n" +
+            "for i in $(find / -maxdepth 2 -xdev -type d) ; do\n" +
+            "  touch $i/1 && echo \"$i - writable\"\n" +
+            "done\n",
+        "stdin" : ""
+    },
+
+    "sh-dbg-py" : {
+        "language" : "sh",
+        "script" :
+           "echo \"Shell PID = $$\"\n" +
+            "cat - >1.py\n" +
+            "exec python 1.py",
+        "stdin" :
+           "import ctypes\n" +
+           "libc = ctypes.CDLL(None)\n" +
+           "syscall = libc.syscall\n" +
+           "pid = syscall(39)\n" +
+           "print \"python PID =\",pid\n"
+    },
+
+    "sh-dbg-dd" : {
+        "language" : "sh",
+        "script" : "dd if=/dev/zero of=foobar bs=4096",
+        "stdin" : ""
+    },
+
+    "sh-dbg-forkbomb" : {
+        "language" : "sh",
+        "script" : ":(){ :|:& };:",
+        "stdin" : ""
+    },
+
+    "sh-dbg-pymem" : {
+        "language" : "sh",
+        "script" :
+            "cat - > 1.py\n" +
+            "python 1.py",
+        "stdin" : "some_str = ' ' * 30000000"
+    },
+
     "awk-hello" : {
         "language" : "awk",
         "script" :
