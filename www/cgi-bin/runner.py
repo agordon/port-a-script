@@ -178,6 +178,6 @@ if __name__ == "__main__":
     # note:max file size must be the same (or larger)
     # to the 'ulimit -f' set in port-a-script.sh
     # (otherwise the script will fail with 'ulimit -f: permission denied')
-    set_resource_limits(walltime=2,filesize=100*1024)
+    set_resource_limits(walltime=4,filesize=100*1024)
     force_C_locale()
     cgi_main()
