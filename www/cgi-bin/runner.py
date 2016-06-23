@@ -88,7 +88,7 @@ html_tmpl="""
         <div class="col-md-6">
           Update Script below:
           <br/>
-          <textarea id="script" name="script_text" rows="10" class="mytextarea">{{ script }}</textarea>
+          <textarea id="script" name="script_text" rows="6" class="mytextarea">{{ script }}</textarea>
         </div>
 
         <div class="col-md-6">
@@ -96,14 +96,14 @@ html_tmpl="""
           <br/>
           (leave empty for /dev/null redirection)
           <br/>
-          <textarea id="stdin" name="stdin_text" rows="9" class="mytextarea">{{ stdin }}</textarea>
+          <textarea id="stdin" name="stdin_text" rows="5" class="mytextarea">{{ stdin }}</textarea>
         </div>
 
       </div>
 
       <div class="row">
         <div class="col-md-12">
-          <input class="button primary" type="submit" name="run" value="run" />
+          <input class="button btn-primary" type="submit" name="run" value="run again" />
           <input class="button" type="reset" name="reset" value="reset" />
         </div>
       </div>

@@ -25,27 +25,38 @@
 
       <div class="row">
         <div class="col-md-12">
-          Language:
-          <label><input type="radio" name="language" checked value="sh"> sh</label>
-          <label><input type="radio" name="language" value="awk"> awk</label>
-          <label><input type="radio" name="language" value="sed"> sed</label>
+          <div class="pull-left">
+            Language:
+            <label><input type="radio" id="lang-sh" name="language" checked value="sh"> sh</label>
+            <label><input type="radio" id="lang-awk" name="language" value="awk"> awk</label>
+            <label><input type="radio" id="lang-sed" name="language" value="sed"> sed</label>
+          </div>
+          <div class="pull-right">
+            <select name="examples" id="examples" onchange="setexample();">
+              <option value="none">Select Example...</option>
+              <option value="sh-hello">sh: hello world</option>
+              <option value="sh-dollar">sh: proposed POSIX dollar sign escape</option>
+              <option value="awk-hello">awk: hello world</option>
+              <option value="sed-hello">sed: hello world</option>
+              <option value="sed-escape">sed: escape sequences</option>
+            </select>
+          </div>
         </div>
+        <br/>
+        <br/>
       </div>
 
       <div class="row">
         <div class="col-md-6">
-          Enter Script below,
-          or upload  a file: <input class="upload" type="file" name="script_file" />
-          <textarea id="script" name="script_text" rows="10" class="mytextarea">echo Hello World
-echo === shell variables ===
-set
-          </textarea>
+          Enter <b>Script</b> below
+          <!--or upload  a file: <input class="upload" type="file" name="script_file" />-->
+          <textarea id="script" name="script_text" rows="10" class="mytextarea"></textarea>
           <br/>
         </div>
 
         <div class="col-md-6">
-          Set stdin input
-          or upload  a file: <input class="upload" type="file" name="stdin_file" />
+          Set <b>stdin</b> input below,
+          <!--or upload  a file: <input class="upload" type="file" name="stdin_file" />-->
           <br/>
           (leave empty for /dev/null redirection)
           <textarea id="stdin" name="stdin_text" rows="9" class="mytextarea"></textarea>
@@ -55,7 +66,7 @@ set
 
       <div class="row">
         <div class="col-md-12">
-          <input class="button primary" type="submit" name="run" value="run" />
+          <input class="button btn-primary" type="submit" name="run" value="run" />
           <input class="button" type="reset" name="reset" value="reset" />
         </div>
       </div>
@@ -64,9 +75,12 @@ set
 
     <h3>Details</h3>
     <p>
-      This website provides means to run a script (shell, awk or sed)
-      using multiple common implementations, and examine the
-      differences in them.
+      This website takes a script (shell, awk or sed)
+      runs runs it using multiple common free-software implementations,
+      and reports back the results.
+      <br/>
+      It is meant as a portability tester tool, to examine differences between
+      implmentation (also testing conformity to POSIX standard).
     </p>
     <p>
       A script will be run using the following implementations:
@@ -151,5 +165,8 @@ set
     <br/>
 
   </div>
+
+  <script type="text/javascript" src="examples.js"></script>
+
 </body>
 </html>
