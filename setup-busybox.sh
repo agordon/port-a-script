@@ -68,6 +68,7 @@ for opt in \
     CONFIG_WHICH \
     CONFIG_NICE \
     CONFIG_RENICE \
+    CONFIG_UMOUNT \
     ;
 do
   sed -i "/$opt\b/s/.*/$opt=y/" .config

@@ -118,7 +118,7 @@ test -e ./busybox-custom \
 
 cp ./busybox-custom "$1/usr/bin" || die "failed to copy busybox-custom"
 
-busyboxes="ifconfig ip free killall kill more nc netstat
+busyboxes="ifconfig ip free killall kill more nc netstat umount
 unix2dos dos2unix su hostname httpd which nice renice"
 
 for i in $busyboxes ;
