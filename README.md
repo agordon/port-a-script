@@ -25,7 +25,8 @@ Other GNU/Linuxes should work but will likely require some tweaking.
    [containers](https://github.com/arachsys/containers) and
    agordon's [containers-aux](https://github.com/agordon/containers-aux).
 5. (for web-server): setup a container with `sudo ./setup-container.sh data`.
-
+6. (for web-server): setup loop-back tmp directory inside the container
+   with `sudo ./setup-container-tmp-dir.sh`
 
 Running locally
 ---------------

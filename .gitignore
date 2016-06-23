@@ -10,3 +10,6 @@ busybox-1.24.2/
 
 # SAS-implementations
 sas-implementations/
+
+# loopback tmp directory
+container-tmp-dir-device.bin
