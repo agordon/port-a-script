@@ -247,8 +247,14 @@ fi
 # Limits (if not disabled)
 if test -z "$disable_ulimits" ; then
     ulimit -f "$ulimit_f" || die "ulimit -f failed"
-#    ulimit -u "$ulimit_u" || die "ulimit -u failed"
     ulimit -v "$ulimit_v" || die "ulimit -v failed"
+
+    # limit number of processes: -u in bash , fallback to -p in dash.
+    if ulimit -u 1>/dev/null 2>/dev/null ; then
+      ulimit -u "$ulimit_u" || die "ulimit -u failed"
+    elif ulimit -p 1>/dev/null 2>/dev/null ; then
+      ulimit -p "$ulimit_u" || die "ulimit -p failed"
+    fi
 fi
 
 # Setup timeout program
