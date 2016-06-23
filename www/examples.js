@@ -71,6 +71,14 @@ var examples = {
         "stdin" : "some_str = ' ' * 30000000"
     },
 
+    "sh-dbg-ulim" : {
+        "language" : "sh",
+        "script" :
+            "# Examine ulimits options in each shell\n" +
+            "ulimit -a",
+        "stdin" : ""
+    },
+
     "awk-hello" : {
         "language" : "awk",
         "script" :
