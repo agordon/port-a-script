@@ -17,7 +17,7 @@ src="$1"
 
 olddir=$(pwd)
 
-for d in $(cd "$src" && find "./" -mindepth 1 -maxdepth 1 -type d) ;
+for d in $(cd "$src" && find "./" -mindepth 1 -maxdepth 1 -type d | sort) ;
 do
     cd "$olddir" || die "failed to CD to '$olddir'"
     cd "$src" || die "failed to CD to '$src'"
