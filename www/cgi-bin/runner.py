@@ -104,7 +104,6 @@ html_tmpl="""
       <div class="row">
         <div class="col-md-12">
           <input class="button btn-primary" type="submit" name="run" value="run again" />
-          <input class="button" type="reset" name="reset" value="reset" />
         </div>
       </div>
 
@@ -171,7 +170,7 @@ def cgi_main():
     html = tmpl.render(language=language,
                        script=script, stdin=stdin,
                        results=html_file_list)
-    print (html)
+    print (html.encode('ascii','ignore'))
 
 
 if __name__ == "__main__":
